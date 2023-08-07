@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   ActivityIndicator,
@@ -8,16 +8,16 @@ import {
   Image,
   Alert,
 } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { Brand } from '../../components';
-import { useTheme } from '../../hooks';
-import { useLazyFetchOneQuery } from '../../services/modules/users';
-import { changeTheme, ThemeState } from '../../store/theme';
+import {useDispatch} from 'react-redux';
+import {useTranslation} from 'react-i18next';
+import {useTheme} from '../../hooks';
+import {useLazyFetchOneQuery} from '@services/modules/users';
+import {changeTheme, ThemeState} from '@store/theme';
 import i18next from 'i18next';
+import {Brand} from '@components';
 
 const Example = () => {
-  const { t } = useTranslation(['example', 'welcome']);
+  const {t} = useTranslation(['example', 'welcome']);
   const {
     Common,
     Fonts,
@@ -28,17 +28,17 @@ const Example = () => {
   } = useTheme();
   const dispatch = useDispatch();
 
-  const [fetchOne, { data, isSuccess, isLoading, isFetching }] =
+  const [fetchOne, {data, isSuccess, isLoading, isFetching}] =
     useLazyFetchOneQuery();
 
   useEffect(() => {
     if (isSuccess && data?.name) {
-      Alert.alert(t('example:helloUser', { name: data.name }));
+      Alert.alert(t('example:helloUser', {name: data.name}));
     }
   }, [isSuccess, data]);
 
-  const onChangeTheme = ({ theme, darkMode }: Partial<ThemeState>) => {
-    dispatch(changeTheme({ theme, darkMode }));
+  const onChangeTheme = ({theme, darkMode}: Partial<ThemeState>) => {
+    dispatch(changeTheme({theme, darkMode}));
   };
 
   const onChangeLanguage = (lang: 'fr' | 'en') => {
@@ -64,6 +64,7 @@ const Example = () => {
           Layout.alignItemsCenter,
         ]}
       >
+        <Brand/>
         <View
           style={[
             Layout.absolute,
@@ -92,11 +93,11 @@ const Example = () => {
             {
               height: 300,
               width: 300,
-              transform: [{ translateY: 40 }],
+              transform: [{translateY: 40}],
             },
           ]}
         >
-          <Brand height={300} width={300} />
+          <Brand height={300} width={300}/>
         </View>
         <Image
           style={[
@@ -201,22 +202,22 @@ const Example = () => {
             onPress={() => fetchOne(`${Math.ceil(Math.random() * 10 + 1)}`)}
           >
             {isFetching || isLoading ? (
-              <ActivityIndicator />
+              <ActivityIndicator/>
             ) : (
               <Image
                 source={Images.icons.send}
-                style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
+                style={{tintColor: isDark ? '#A6A4F0' : '#44427D'}}
               />
             )}
           </TouchableOpacity>
 
           <TouchableOpacity
             style={[Common.button.circle, Gutters.regularBMargin]}
-            onPress={() => onChangeTheme({ darkMode: !isDark })}
+            onPress={() => onChangeTheme({darkMode: !isDark})}
           >
             <Image
               source={Images.icons.colors}
-              style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
+              style={{tintColor: isDark ? '#A6A4F0' : '#44427D'}}
             />
           </TouchableOpacity>
 
@@ -228,7 +229,7 @@ const Example = () => {
           >
             <Image
               source={Images.icons.translate}
-              style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
+              style={{tintColor: isDark ? '#A6A4F0' : '#44427D'}}
             />
           </TouchableOpacity>
         </View>

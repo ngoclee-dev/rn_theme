@@ -5,12 +5,22 @@ module.exports = {
     [
       'module-resolver',
       {
-        root: ['./src'],
-        extensions: ['.js', '.json'],
+        root: ['./'],
         alias: {
           '@': './src',
           types: './@types',
+          '^~(.+)': './src/\\1',
         },
+        extensions: [
+          '.ios.js',
+          '.android.js',
+          '.js',
+          '.jsx',
+          '.json',
+          '.tsx',
+          '.ts',
+          '.native.js',
+        ],
       },
     ],
     'inline-dotenv',
