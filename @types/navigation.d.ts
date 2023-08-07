@@ -3,6 +3,9 @@ import { StackScreenProps } from '@react-navigation/stack';
 
 export type MainParamsList = {
   Home: undefined;
+  Videos: undefined;
+  Download: undefined;
+  Profile: undefined
 };
 
 export type ApplicationStackParamList = {

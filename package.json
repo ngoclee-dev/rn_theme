@@ -15,9 +15,13 @@
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.2.9",
     "@react-navigation/bottom-tabs": "^6.5.8",
+    "@react-navigation/core": "^6.4.9",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
     "@reduxjs/toolkit": "^1.9.5",
+    "@shopify/react-native-performance": "^4.1.2",
+    "@shopify/react-native-performance-navigation": "^3.0.0",
+    "@shopify/react-native-performance-navigation-bottom-tabs": "^3.0.0",
     "expo": "^49.0.0",
     "i18next": "^23.2.3",
     "react": "18.2.0",

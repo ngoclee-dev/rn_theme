@@ -10,7 +10,7 @@ import {
   themes,
   DefaultVariables,
 } from '../theme';
-import { ThemeState } from '../store/theme';
+import { ThemeState } from '~store/theme';
 import {
   ThemeVariables,
   Theme,
