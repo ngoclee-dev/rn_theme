@@ -1,12 +1,45 @@
+//{
+//  "extends": "@tsconfig/react-native/tsconfig.json",
+//  "compilerOptions": {
+//    "types": ["react-native", "jest", "node"],
+//    "typeRoots": [
+//      "@types",
+//      "./node_modules/@types"
+//    ],
+//    "baseUrl": ".",
+//    "paths": {"@*": ["./src/*"]}
+//  }
+//}
+
+// prettier-ignore
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "./",
     "types": ["react-native", "jest", "node"],
     "typeRoots": [
       "@types",
       "./node_modules/@types"
     ],
-    "baseUrl": ".",
-    "paths": {"@*": ["./src/*"]}
+    "importHelpers": true,
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "react-native",
+    "noEmit": true,
+    "strict": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "lib": [
+      "dom",
+      "es6",
+      "es2016",
+      "esnext",
+      "es2015"
+    ],
+    "resolveJsonModule": true,
+    "paths": {"~*": ["./src/*"]}
   }
 }
+
