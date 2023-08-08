@@ -1,45 +1,25 @@
-import {NavigationKeys} from "~navigators/keys";
-import {Download, Home, Profile, Videos} from "~screens/Tabs";
-import { createProfiledBottomTabNavigator } from "@shopify/react-native-performance-navigation-bottom-tabs";
+import {AppArrayTabs, TabType} from "~navigators/keys";
+import {createProfiledBottomTabNavigator} from "@shopify/react-native-performance-navigation-bottom-tabs";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
-import {faDownload, faHouse, faUser, faVideo} from "@fortawesome/pro-regular-svg-icons";
 
 const {Tab, buildProfiledBottomTabBarButton} = createProfiledBottomTabNavigator();
 const TabNavigator = () => {
+  const renderTab = (item: TabType, index: number) => {
+    return (
+      <Tab.Screen
+        key={index}
+        name={item.title}
+        component={item.component}
+        options={{
+          tabBarButton: buildProfiledBottomTabBarButton(),
+          tabBarIcon: ({color, size}) => <FontAwesomeIcon icon={item.icon} size={size} color={color}/>
+        }}
+      />
+    )
+  }
   return (
     <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen
-        name={NavigationKeys.Home}
-        component={Home}
-        options={{
-          tabBarButton: buildProfiledBottomTabBarButton(),
-          tabBarIcon: ({color, size}) => <FontAwesomeIcon icon={faHouse} size={size} color={color}/>
-        }}
-      />
-      <Tab.Screen
-        name={NavigationKeys.Videos}
-        component={Videos}
-        options={{
-          tabBarButton: buildProfiledBottomTabBarButton(),
-          tabBarIcon: ({color, size}) => <FontAwesomeIcon icon={faVideo} size={size} color={color}/>
-        }}
-      />
-      <Tab.Screen
-        name={NavigationKeys.Download}
-        component={Download}
-        options={{
-          tabBarButton: buildProfiledBottomTabBarButton(),
-          tabBarIcon: ({color, size}) => <FontAwesomeIcon icon={faDownload} size={size} color={color}/>
-        }}
-      />
-      <Tab.Screen
-        name={NavigationKeys.Profile}
-        component={Profile}
-        options={{
-          tabBarButton: buildProfiledBottomTabBarButton(),
-          tabBarIcon: ({color, size}) => <FontAwesomeIcon icon={faUser} size={size} color={color}/>
-        }}
-      />
+      {AppArrayTabs.map(renderTab)}
     </Tab.Navigator>
   );
 };
