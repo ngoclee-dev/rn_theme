@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "59945684917",
+    "project_id": "u2movies",
+    "storage_bucket": "u2movies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59945684917:android:0ca76012a07209348b93fc",
+        "android_client_info": {
+          "package_name": "com.u2movies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59945684917-dhccn1tdiad63589o4jsib9k94s1278s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzjiqQRHbb0cJhJUKvS7GdjIHkKPc_Md0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59945684917-dhccn1tdiad63589o4jsib9k94s1278s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "59945684917-5p1drncrfldn99293jkafh5b7u8l0r99.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unicornultra.u2ubio"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
