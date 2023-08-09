@@ -1,11 +1,12 @@
 import React from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
+import WebView from "react-native-webview";
 
 
 const Explore = () => {
   return (
-    <View>
-      <Text>Explore</Text>
+    <View style={{flex: 1}}>
+      <WebView source={{ uri: 'https://m.google.com/' }} style={{ flex: 1 }} />
     </View>
   )
 }
