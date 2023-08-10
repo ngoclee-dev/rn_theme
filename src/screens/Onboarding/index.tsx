@@ -15,15 +15,9 @@ const Onboarding = () => {
   return (
     <View style={Layout.fill}>
       <View style={{...Layout.colCenter, flex: 4}}>
-        <Text>Image cover</Text>
+        <Text>Onboarding</Text>
       </View>
-      <View style={{...Layout.colReverse, flex: 3, backgroundColor: "red"}}>
-        <TouchableOpacity
-          style={[Common.button.base]}
-        >
-          <Text>Hello</Text>
-        </TouchableOpacity>
-      </View>
+
     </View>
   )
 }
