@@ -12,12 +12,13 @@ const Onboarding = () => {
     Images,
     darkMode: isDark,
   } = useTheme();
+
+
   return (
     <View style={Layout.fill}>
       <View style={{...Layout.colCenter, flex: 4}}>
         <Text>Onboarding</Text>
       </View>
-
     </View>
   )
 }
